@@ -18,7 +18,7 @@ export class CursController {
 			}
 		})
 	}
-	static GetAllCurs(req, res) {
+	static getAllCurs(req, res) {
 		curs.find().then((data)=>{
 			res.send(data)
 		})
