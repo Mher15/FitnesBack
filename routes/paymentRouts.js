@@ -1,8 +1,8 @@
 import express from "express";
 const route = express.Router();
 
-import Payment from "../controllers/payment.js";
+import { PaymentController } from "../controllers/PaymentController.js";
 
-route.get("/payment", Payment.index);
+route.post("/", PaymentController.index);
 
 export default route;
