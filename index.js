@@ -1,11 +1,12 @@
 import express from "express";
 import AdminRoutes from "./routes/AdminRouts.js";
-import PaymentRoutes from "./routes/PaymentRouts.js"
-import CursRoutes from "./routes/CursRoutes.js"
+import PaymentRoutes from "./routes/PaymentRouts.js";
+import CursRoutes from "./routes/CursRoutes.js";
+import OrderRoutes from "./routes/OrderRouts.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 
 const app = express();
@@ -18,6 +19,8 @@ app.use(cors())
 app.use("/admin", AdminRoutes);
 app.use("/payment",PaymentRoutes)
 app.use("/curs", CursRoutes)
+app.use("/order", OrderRoutes)
+
 
 const port  = process.env.PORT || 5000;
 
