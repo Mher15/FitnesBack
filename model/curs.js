@@ -4,7 +4,9 @@ const curs = new mongoose.Schema({
 	title: String,
 	description: String,
 	amount: Number,
-	status: Boolean
+	status: Boolean,
+	url: String,
+	times: Array
 });
 
 export default mongoose.model("curs",curs)

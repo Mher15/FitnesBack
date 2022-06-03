@@ -4,10 +4,16 @@ import curs from "../model/curs.js";
 export class CursController {
 	static curs(req, res) {
 		const newCurs = new curs({
-			title: "title2",
-			description: "description3",
-			amount: 1000,
-			status: true
+			title: "title5",
+			description: "description5",
+			amount: 250,
+			status: true,
+			url: "../../assets/images/curs2.jpeg",
+			times:[
+				"test curs1",
+				"test curs2",
+				"test curs3",
+			]
 		})
 		newCurs.save((data, error) => {
 			if (error) {
