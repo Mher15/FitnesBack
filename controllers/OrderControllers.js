@@ -8,7 +8,8 @@ export class OrderController {
 			email: "karen@asd.ss",
 			phone: "77777777777777",
 			time: "20/04/2022",
-			age: "20-20"
+			age: "20-20",
+			orderPay: true
 		})
 		newOrder.save((data, error) => {
 			if (error) {
