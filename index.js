@@ -21,6 +21,7 @@ app.use("/payment",PaymentRoutes)
 app.use("/curs", CursRoutes)
 app.use("/order", OrderRoutes)
 
+app.use('/images', express.static('images'));
 
 const port  = process.env.PORT || 2001;
 
