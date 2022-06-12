@@ -8,7 +8,8 @@ export class CursController {
 			description: "description5",
 			amount: 250,
 			status: true,
-			url: "../../assets/images/curs2.jpeg",
+			url1: "../../assets/images/curs2.jpeg",
+			url2: "../../assets/images/curs2.jpeg",
 			times:[
 				"test curs1",
 				"test curs2",

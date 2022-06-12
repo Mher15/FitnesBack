@@ -5,7 +5,8 @@ const curs = new mongoose.Schema({
 	description: String,
 	amount: Number,
 	status: Boolean,
-	url: String,
+	url1: String,
+	url2: String,
 	times: Array
 });
 
