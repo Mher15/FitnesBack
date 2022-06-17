@@ -6,16 +6,21 @@ export class AdminController {
   }
   static update(req, res) {
     console.log(req.body)
-    // curs
-      // .findOneAndUpdate(
-      //   { _id: "62a5e1de0eafd7fee73eb0a1" },
-      //   { $set: { title: "tessssss" } },
-      //   { new: true }
-      // )
-      // .then((item) => {
-      //   console.log(item);
-      // });
-      // res.end()
+    curs
+      .findOneAndUpdate(
+        { _id: req.body.id},
+        { $set: {
+           title:req.body.title,
+           description: req.body.description,
+           amount: req.body.amount,
+           times:req.body.times
+         } },
+        { new: true }
+      )
+      .then((item) => {
+        console.log(item);
+      });
+      res.end()
   }
   static delete(req, res) {
     curs.deleteOne({ _id: req.body.id })

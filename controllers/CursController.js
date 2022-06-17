@@ -4,12 +4,12 @@ import curs from "../model/curs.js";
 export class CursController {
 	static curs(req, res) {
 		const newCurs = new curs({
-			title: "title5",
+			title: "Simakey Schedul",
 			description: "description5",
 			amount: 250,
 			status: true,
-			url1: "../../assets/images/curs2.jpeg",
-			url2: "../../assets/images/curs2.jpeg",
+			url1: "http://localhost:2001/images/bookyourfreetraining1.jpg",
+			url2: "http://localhost:2001/images/bookyourfreetraining2.jpg",
 			times:[
 				"test curs1",
 				"test curs2",
