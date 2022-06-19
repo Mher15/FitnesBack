@@ -15,6 +15,8 @@ export class CursController {
 				"test curs2",
 				"test curs3",
 			]
+			,
+			free:false
 		})
 		newCurs.save((data, error) => {
 			if (error) {

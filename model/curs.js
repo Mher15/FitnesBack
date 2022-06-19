@@ -7,7 +7,8 @@ const curs = new mongoose.Schema({
 	status: Boolean,
 	url1: String,
 	url2: String,
-	times: Array
+	times: Array,
+	free:Boolean
 });
 
 export default mongoose.model("curs",curs)
