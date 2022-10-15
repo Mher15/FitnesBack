@@ -7,9 +7,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
-import Stripe from "stripe";
 
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 
 
 
@@ -54,7 +52,7 @@ app.post("/payment", cors(), async (req, res) => {
 
 const port  = process.env.PORT || 2001;
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.DATABASE, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 })
