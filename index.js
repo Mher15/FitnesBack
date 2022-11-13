@@ -1,19 +1,24 @@
 import express from "express";
 import AdminRoutes from "./routes/AdminRouts.js";
-// import PaymentRoutes from "./routes/PaymentRouts.js";
 import CursRoutes from "./routes/CursRoutes.js";
 import OrderRoutes from "./routes/OrderRouts.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
+import  path from 'path';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
 
-
+const __dirname = path.dirname(__filename);
 
 const app = express();
-dotenv.config()
-
+dotenv.config();
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*',(req, res)=>{
+	res.sendFile(path.join(__dirname,'build','index.html'));
+});
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors())
@@ -50,7 +55,7 @@ app.post("/payment", cors(), async (req, res) => {
 	}
 })
 
-const port  = process.env.PORT || 2001;
+const port  = 9000;
 
 mongoose.connect(process.env.DATABASE, {
 	useNewUrlParser: true,
