@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.cb520465.css",
-    "main.js": "/static/js/main.c289f23b.js",
+    "main.js": "/static/js/main.caa56d39.js",
     "static/media/video.mp4": "/static/media/video.627e282a6cccce838259.mp4",
     "static/media/slider17.jpg": "/static/media/slider17.de9526db7a517530c70f.jpg",
     "static/media/befor3.jpg": "/static/media/befor3.7df050e04e83d2f2c2d0.jpg",
@@ -35,8 +35,10 @@
     "static/media/slider7.jpg": "/static/media/slider7.b27c475167dc3ebedf23.jpg",
     "static/media/slider1.jpg": "/static/media/slider1.3f1163ecad2da0ea11bb.jpg",
     "static/media/cours1.jpg": "/static/media/cours1.8b55f495d6ee2b948533.jpg",
+    "static/media/Stretching1.jpg": "/static/media/Stretching1.bd51e966b9d5f690c2ff.jpg",
     "static/media/grid1.jpg": "/static/media/grid1.53364c0b3e9c90e6d744.jpg",
     "static/media/about3.jpeg": "/static/media/about3.5fbf0270614df7924834.jpeg",
+    "static/media/acrobatics1.jpeg": "/static/media/acrobatics1.e400ea82ad277f4a3228.jpeg",
     "static/media/gimnastics.jpg": "/static/media/gimnastics.e400ea82ad277f4a3228.jpg",
     "static/media/about2.jpeg": "/static/media/about2.ce9dee2b8b832de4f60a.jpeg",
     "static/media/logo.png": "/static/media/logo.3dc6129bae51ca51649d.png",
@@ -44,6 +46,7 @@
     "static/media/first.jpg": "/static/media/first.0dbf9e3feb0a34550db1.jpg",
     "static/media/grid2.jpg": "/static/media/grid2.0e1e860ebc47a9afadfc.jpg",
     "static/media/gothampro_italic.ttf": "/static/media/gothampro_italic.ed40ea7b2680692bd2b1.ttf",
+    "static/media/bookyourfreetraining1.jpg": "/static/media/bookyourfreetraining1.a1e06565008dff463a9c.jpg",
     "static/media/gothampro_bold.ttf": "/static/media/gothampro_bold.764ba13de4409a990823.ttf",
     "static/media/gothampro_light.ttf": "/static/media/gothampro_light.dfbba8c980f43420d2d1.ttf",
     "static/media/gothampro_medium.ttf": "/static/media/gothampro_medium.dca4b95d345c2abd8661.ttf",
@@ -51,10 +54,10 @@
     "static/media/gothampro_black.ttf": "/static/media/gothampro_black.8c2f478dfa880e2de0a1.ttf",
     "index.html": "/index.html",
     "main.cb520465.css.map": "/static/css/main.cb520465.css.map",
-    "main.c289f23b.js.map": "/static/js/main.c289f23b.js.map"
+    "main.caa56d39.js.map": "/static/js/main.caa56d39.js.map"
   },
   "entrypoints": [
     "static/css/main.cb520465.css",
-    "static/js/main.c289f23b.js"
+    "static/js/main.caa56d39.js"
   ]
 }
