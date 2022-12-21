@@ -16,12 +16,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 dotenv.config();
 app.use(express.static(path.join(__dirname, "build")));
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+
 app.get("/test", (req, res) => {
-  res.send("hello world!");
+  console.log('hello world')
 });
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -57,7 +57,11 @@ app.post("/payment", cors(), async (req, res) => {
   }
 });
 
-const port = 4096;
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+const port = 9000;
 
 mongoose
   .connect(process.env.DATABASE, {
