@@ -39,28 +39,74 @@ export class AdminController {
   }
 
   static freeMail(req, res) {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
+    var smtpConfig = {
+      host: "smtp.sendgrid.net",
+      secure: true, // use SSL
       auth: {
-        user: 'simakey.klara@gmail.com',
-        pass: 'rfyupumwvtglcqth'
-      }
-    })
-    
-    const mailOptions = {
-      from: "simakey.klara@gmail.com",
-      to: "mher15jan@gmail.com",
-      subject: "Sending Email using Node.js",
-      html: "<h1>That was easy!</h1>",
+        user: "apikey",
+        pass: "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",
+      },
     };
-
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Email sent: " + info.response);
+    
+    var transporter = nodemailer.createTransport(smtpConfig);
+    
+      console.log(req.body)
+      function gethtml(){
+        return `
+          <h1>User Nmae ${req.body.fullName}</h1>
+        `
       }
-    });
-
+      var mailOptions = {
+        from: "noreplysimakey@gmail.com",
+        // to: req.body.email,
+        to: "klarasimonyans@gmail.com",
+        subject: "new student",
+        text: 'new student',
+        html:gethtml()
+      };
+    
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
+  }
+  
+  static paymentMail(req, res) {
+    var smtpConfig = {
+      host: "smtp.sendgrid.net",
+      secure: true, // use SSL
+      auth: {
+        user: "apikey",
+        pass: "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",
+      },
+    };
+    
+    var transporter = nodemailer.createTransport(smtpConfig);
+    
+      console.log(req.body)
+      function gethtml(){
+        return `
+          <h1>User Nmae ${req.body.fullName}</h1>
+        `
+      }
+      var mailOptions = {
+        from: "noreplysimakey@gmail.com",
+        // to: req.body.email,
+        to: "klarasimonyans@gmail.com",
+        subject: "new student",
+        text: 'new student',
+        html:gethtml()
+      };
+    
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
   }
 }

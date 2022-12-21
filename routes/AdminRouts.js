@@ -7,5 +7,6 @@ route.get("/", AdminController.index);
 route.post("/update", AdminController.update);
 route.post("/delete", AdminController.delete);
 route.post("/freeMail", AdminController.freeMail);
+route.post("/paymentMail", AdminController.paymentMail);
 
 export default route;
