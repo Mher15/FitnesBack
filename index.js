@@ -58,7 +58,7 @@ app.post("/payment", cors(), async (req, res) => {
 	}
 })
 
-const port  = 9000;
+const port  = 7007;
 
 mongoose.connect(process.env.DATABASE, {
 	useNewUrlParser: true,
@@ -70,7 +70,7 @@ mongoose.connect(process.env.DATABASE, {
 
 app.listen(port, error => {
 	if(error) throw error;
-	console.log('Your server is running on port 2001')
+	console.log('Your server is running on port 7007')
 });
 
 
