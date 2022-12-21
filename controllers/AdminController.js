@@ -49,13 +49,6 @@ export class AdminController {
     };
     
     var transporter = nodemailer.createTransport(smtpConfig);
-    
-      console.log(req.body)
-      function gethtml(){
-        return `
-          <h1>User Nmae ${req.body.fullName}</h1>
-        `
-      }
       var mailOptions = {
         from: "noreplysimakey@gmail.com",
         // to: req.body.email,
