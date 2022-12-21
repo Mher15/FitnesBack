@@ -68,7 +68,8 @@ mongoose
     console.log("DB Connection Successfull");
   });
 
-app.listen(port,(error) => {
-  if (error) throw error;
-  console.log("Your server is running on port 2001");
-});
+
+app.listen(port,error => {
+	if (error) throw error;
+	console.log("Your server is running on port 2001");
+})
