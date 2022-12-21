@@ -57,7 +57,7 @@ app.post("/payment", cors(), async (req, res) => {
   }
 });
 
-const port = 9000;
+const port = 4096;
 
 mongoose
   .connect(process.env.DATABASE, {
