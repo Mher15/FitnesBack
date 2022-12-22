@@ -8,6 +8,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import nodemailer from "nodemailer";
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -16,11 +17,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 dotenv.config();
 app.use(express.static(path.join(__dirname, "build")));
-
-app.get("/test", (req, res) => {
-  console.log('hello world')
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
-
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -55,10 +54,6 @@ app.post("/payment", cors(), async (req, res) => {
       success: false,
     });
   }
-});
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 const port = 9000;

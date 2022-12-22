@@ -1,6 +1,16 @@
 import curs from "../model/curs.js";
 import nodemailer  from 'nodemailer';
 
+var smtpConfig = { 
+  host: "smtp.sendgrid.net", 
+  secure: true, // use SSL 
+  auth: { 
+    user: "apikey", 
+    pass: "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", 
+  }, 
+}; 
+ 
+var transporter = nodemailer.createTransport(smtpConfig);
 
 export class AdminController {
   static index(req, res) {
@@ -39,23 +49,13 @@ export class AdminController {
   }
 
   static freeMail(req, res) {
-    var smtpConfig = {
-      host: "smtp.sendgrid.net",
-      secure: true, // use SSL
-      auth: {
-        user: "apikey",
-        pass: "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",
-      },
-    };
     
-    var transporter = nodemailer.createTransport(smtpConfig);
       var mailOptions = {
         from: "noreplysimakey@gmail.com",
         // to: req.body.email,
         to: "klarasimonyans@gmail.com",
         subject: "new student",
         text: 'new student',
-        html:gethtml()
       };
     
       transporter.sendMail(mailOptions, function (error, info) {
