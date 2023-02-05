@@ -50,7 +50,7 @@ app.post("/api/free-curs", (req, res) => {
   </div>`
   var mailOptions = {
     from: "Simakey.klara@gmail.com",
-    to: "karen.jamalyan96@gmail.com",
+    to: "mher.janikyan01@gmail.com",
     subject: "New Free curs",
   	html:htmlBody
   };
