@@ -29,7 +29,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 app.get("/test", (req, res) => {
-res.send("helllooo")})
+res.send("helllooo")
+})
 app.post("/api/free-curs", (req, res) => {
   var smtpConfig = {
     host: "smtp.sendgrid.net",
