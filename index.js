@@ -32,15 +32,6 @@ app.get("/test", (req, res) => {
 res.send("helllooo")
 })
 app.post("/api/free-curs", (req, res) => {
-  var smtpConfig = {
-    host: "smtp.sendgrid.net",
-    secure: true, // use SSL
-    auth: {
-      user: "apikey",
-      pass: "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",
-    },
-  };
-  var transporter = nodemailer.createTransport(smtpConfig);
   const htmlBody = `<div>
 	<h1>Curs Name:${req.body.cursName}</h1>  
 	<h1>Client Name:${req.body.name}</h1>  
@@ -48,12 +39,22 @@ app.post("/api/free-curs", (req, res) => {
 	<h1>Client Email:${req.body.email}</h1>  
   <p>${req.body.age}</p>
   </div>`
-  var mailOptions = {
-    from: "Simakey.klara@gmail.com",
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "simakey.klara@gmail.com",
+      pass: "fapoqkvdqbgwaipv",
+    },
+  });
+
+  const mailOptions = {
+    from: "simakey.klara@gmail.com",
     to: "mher.janikyan01@gmail.com",
-    subject: "New Free curs",
-  	html:htmlBody
+    subject: "simakey",
+    text: htmlBody(),
   };
+
   transporter.sendMail(mailOptions, function (error) {
     if (error) {
       console.log(error);
