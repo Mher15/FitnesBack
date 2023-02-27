@@ -19,6 +19,7 @@
     "mongoose": "^6.3.4",
     "mysql": "^2.18.1",
     "mysql-server": "^1.0.5",
+    "mysql2": "^3.1.2",
     "nodemailer": "^6.7.5",
     "nodemon": "^2.0.16",
     "stripe": "^9.5.0",

@@ -5,19 +5,19 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import nodemailer from "nodemailer";
-import mysql from "mysql";
+import mysql from "mysql2";
 
-// const connection = mysql.createConnection({
-//   host: "db-mysql-nyc1-16107-do-user-12870397-0.b.db.ondigitalocean.com",
-//   port: "25060",
-//   user: "doadmin",
-//   password: "simakey12345",
-//   database: "defaultdb",
-// });
-// connection.connect((err) => {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
+const connection = mysql.createConnection({
+  host: "db-mysql-nyc1-16107-do-user-12870397-0.b.db.ondigitalocean.com",
+  port: "25060",
+  user: "doadmin",
+  password: "AVNS_LesTQ8CZzZDD3Eot7yW",
+  database: "defaultdb",
+});
+connection.connect((err) => {
+  if (err) throw err;
+  console.log("Connected!");
+});
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -42,42 +42,44 @@ app.get("/", (req, res) => {
 });
 
 app.get("/get-all-groups", async (req, res) => {
-  // connection.query(`SELECT * FROM groups`, (err, rews) => {
-  //   return res.send(rews);
-  // });
+
+  connection.query(`SELECT * FROM "groups"`, (err, rews) => {
+    console.log(rews)
+    return res.send(rews);
+  });
 });
 
 app.post("/curs_by_id", async (req, res) => {
-  // connection.query(
-  //   `SELECT * FROM groups WHERE id=${req.body.id}`,
-  //   (err, rews) => {
-  //     return res.send(rews);
-  //   }
-  // );
+  connection.query(
+    `SELECT * FROM "groups" WHERE id=${req.body.id}`,
+    (err, rews) => {
+      return res.send(rews);
+    }
+  );
 });
 
 app.post("/change-group-by-id", async (req, res) => {
-  // connection.query(
-  //   `UPDATE groups 
-  //   SET title = '${req.body.title}',description='${
-  //     req.body.description
-  //   }',workout='${JSON.stringify(req.body.workout)}',packages='${JSON.stringify(
-  //     req.body.packages
-  //   )}' 
-  //     WHERE id = ${req.body.id};`
-  // );
+  connection.query(
+    `UPDATE "groups" 
+    SET title = '${req.body.title}',description='${
+      req.body.description
+    }',workout='${JSON.stringify(req.body.workout)}',packages='${JSON.stringify(
+      req.body.packages
+    )}' 
+      WHERE id = ${req.body.id};`
+  );
 });
 
 app.post("/admin-login", (req, res) => {
-  // connection.query(`SELECT * FROM auth`, (err, rews) => {
-  //   if (
-  //     req.body.login === rews[0].login &&
-  //     req.body.password === rews[0].password
-  //   ) {
-  //     return res.send(true);
-  //   }
-  //   res.send(false);
-  // });
+  connection.query(`SELECT * FROM auth`, (err, rews) => {
+    if (
+      req.body.login === rews[0].login &&
+      req.body.password === rews[0].password
+    ) {
+      return res.send(true);
+    }
+    res.send(false);
+  });
 });
 app.post("/api/free-curs", (req, res) => {
   console.log(req.body);
