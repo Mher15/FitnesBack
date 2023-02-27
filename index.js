@@ -109,7 +109,7 @@ app.post("/api/free-curs", (req, res) => {
 
   const mailOptions = {
     from: "simakey.klara@gmail.com",
-    to: "mher.janikyan01@gmail.com",
+    to: "simakeyusa@gmail.com",
     subject: "simakey",
     text: htmlBody,
   };
