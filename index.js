@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.get("/package", (req, res) => {
+app.get("/package/:id", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
