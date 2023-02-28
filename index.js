@@ -45,14 +45,13 @@ app.get("/package/:id", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.get("/admin", (req, res) => {
+app.get("/admin_login_simakey_klara", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.get("/get-all-groups", async (req, res) => {
 
   connection.query(`SELECT * FROM "groups"`, (err, rews) => {
-    console.log(rews)
     return res.send(rews);
   });
 });
@@ -90,7 +89,6 @@ app.post("/admin-login", (req, res) => {
   });
 });
 app.post("/api/free-curs", (req, res) => {
-  console.log(req.body);
   const htmlBody = ` 
  Curs Name:${req.body.cursName}   
  Client Name:${req.body.name}   
@@ -125,7 +123,6 @@ app.post("/api/free-curs", (req, res) => {
 });
 
 app.post("/api/new-payment", (req, res) => {
-  console.log(req.body);
   var smtpConfig = {
     host: "smtp.sendgrid.net",
     secure: true, // use SSL
@@ -186,5 +183,4 @@ const port = 9000;
 
 app.listen(port, (error) => {
   if (error) throw error;
-  console.log("Your server is running on port 9000");
 });
