@@ -1,11 +1,23 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
-import nodemailer from "nodemailer";
-import mysql from "mysql2";
+// import express from "express";
+// import cors from "cors";
+// import bodyParser from "body-parser";
+// import dotenv from "dotenv";
+// import path from "path";bodyParser
+// import { fileURLToPath } from "url";
+// import nodemailer from "nodemailer";
+// import mysql from "mysql2";
+
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+const path = require("path");
+const fileURLToPath = require("url");
+const nodemailer = require("nodemailer");
+const mysql = require('mysql2')
+
+
+
 
 const connection = mysql.createConnection({
   host: "db-mysql-nyc1-16107-do-user-12870397-0.b.db.ondigitalocean.com",
@@ -15,13 +27,13 @@ const connection = mysql.createConnection({
   database: "defaultdb",
 });
 connection.connect((err) => {
-  if (err) throw err;
   console.log("Connected!");
 });
 
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url)
+// console.log("__filename", __filename);
+// const __dirname = path.dirname(__filename);
+// console.log("__filename", __dirname);
 dotenv.config();
 const app = express();
 // app.use(cors());
@@ -50,8 +62,7 @@ app.get("/admin_login_simakey_klara", (req, res) => {
 });
 
 app.get("/get-all-groups", async (req, res) => {
-
-  connection.query(`SELECT * FROM "groups"`, (err, rews) => {
+  connection.query(`SELECT * FROM "groups"`, (err, rews) => {  
     return res.send(rews);
   });
 });
